@@ -1,0 +1,79 @@
+<!-- header static-->
+
+<div id="section1" routerLink="" class="container-fluid">
+    <div>
+        <h3>precios</h3>
+    </div>
+    <div id="imagenLogo">
+        <img src="../../assets/img/logoIntro.png" width="30px" alt="">
+    </div>
+    <div id="justo">
+        <h1><strong>justos</strong></h1>
+    </div>
+</div>
+
+<div id="section2" class="container-fluid">
+    <div id="barCode" type="submit">
+        <img src="../../assets/img/barcode.png" width="40px" alt="">
+    </div>
+
+    <div class="col col-lg-6">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Busca un Producto">
+    </div>
+    <div id="lupa" type="submit">
+        <img src="../../assets/img/buscar.png" width="35px" alt="">
+    </div>
+</div>
+<!-- aqui la provincia seleccionada-->
+
+<div>
+    <h1 id="title">{{provinciaSlctd}}</h1>
+</div>
+
+
+<!--  aqui la parte del contenido de los productos-->
+
+<div class="row">
+    <div id="cantidadProducto">
+        <h5>1788 productos</h5>
+    </div>
+</div>
+
+<!-- aqui las cards-->
+<div>
+    <table  class="table table-dark table-hover">
+        <thead class="table-primary" >
+          <tr>
+            <th scope="col-3">EAN</th>
+            <th scope="col-6">Descripcion</th>
+            <th scope="col-3">Precio</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let producto of productos" id="manito">
+            <tr>
+                 <td class="col-2">{{producto.ean}}</td>
+                 <td class="col-8">{{producto.nombre}}</td>
+                 <td class="col-2">{{producto.precio}}</td>
+            </tr>
+        </tbody>
+      </table>
+
+</div>
+
+
+
+
+
+
+<!--
+<div class="container">
+    <div class="row">
+        <div *ngFor="let producto of productos" class="card col-sm- nmb-2">
+                <div class="card-body">
+                    <h5 class="card-title">{{producto.nombre}} </h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{producto.ean}}</h6>
+                    <p class="card-text">{{producto.precio}}</p>
+                </div>
+        </div>
+    </div>
+</div>-->
