@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule} from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+// aqui los import de las vistas
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProvinciaSelectComponent } from './provincia-select/provincia-select.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { P404Component } from './p404/p404.component';
+
 
 
 
@@ -13,13 +19,16 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     ProductListComponent,
-    ProvinciaSelectComponent
+    ProvinciaSelectComponent,
+    HomeComponent,
+    P404Component,
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

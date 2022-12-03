@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs';
 import { ProvinciasService } from '../service/provincias.service';
+
 
 export interface Provincia {
   id: number;
@@ -30,7 +31,15 @@ export class ProvinciaSelectComponent {
     id: 0,
   };
   
+  mostrar(){
+    (this.provinciaSeleccionada)
+    
+  }
+  
+  
   
   ngOnInit():void{}
 
 }
+
+
