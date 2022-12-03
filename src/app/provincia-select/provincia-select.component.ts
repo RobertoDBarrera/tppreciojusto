@@ -3,11 +3,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs';
 import { ProvinciasService } from '../service/provincias.service';
-
+import { Router } from '@angular/router';
 
 export interface Provincia {
   id: number;
   nombre: string;
+  url:string;
 }
 
 @Component({
@@ -18,9 +19,10 @@ export interface Provincia {
 
 
 export class ProvinciaSelectComponent {
-  constructor(private ProvinciaService: ProvinciasService) {
+  
+  constructor(private ProvinciaService: ProvinciasService,private router:Router) {
     this.ProvinciaService.getProvincias().subscribe((data: any) => {
-      console.log(data);
+      
       this.provincia = data;
     });
   }
@@ -29,11 +31,11 @@ export class ProvinciaSelectComponent {
   provinciaSeleccionada: Provincia = {
     nombre: '',
     id: 0,
+    url:'',
   };
   
   mostrar(){
-    (this.provinciaSeleccionada)
-    
+    this.router.navigateByUrl(`/provincias/${this.provinciaSeleccionada.url}/productos`)
   }
   
   

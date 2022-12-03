@@ -11,7 +11,7 @@ const routes: Routes = [
 { path:'', component: HomeComponent},
 { path:'home', component: HomeComponent},
 { path:'provincias', component: ProvinciaSelectComponent},
-{ path:'provincias/productos', component: ProductListComponent},
+{ path:'provincias/:id/productos', component: ProductListComponent},
 { path:'**', component: P404Component}
 ];
 
