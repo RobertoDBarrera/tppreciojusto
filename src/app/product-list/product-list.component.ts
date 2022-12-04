@@ -30,7 +30,6 @@ export class ProductListComponent implements OnInit  {
     productoSrv.getProductos(this.provinciaSlctd).subscribe((data:any) => {
     this.productos = data;
     });
-    console.log(this.provinciaSlctd);
   } 
   
   ngOnInit(): void {

@@ -27,11 +27,6 @@ export class ProvinciasService {
     );
   }
   
-  
-   public getllamador(url:any){
-    return this.http.get(`${this.ruta}${url}`).pipe(
-      map((values:any) => {console.log("hola", values.values[2])}))
-                          
-    }
+
   
 }

@@ -1,68 +1,24 @@
-body{
-    background-color: rgb(77, 75, 75);
-    color: white;
-    text-align: center;
-}
-
-#section1{
-    background-color: rgb(51, 73, 122);
-    padding: 15px;
-    display: flex;
-    align-items: center;
+#divIcon{
     justify-content: center;
     text-align: center;
-}
-#imagenLogo{
-    margin-left: 8px;
-    margin-right: 8px;
-}
-
-#section2{
-    background-color: rgb(36, 36, 36);
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#lupa{
-    margin-left: 10px;
-}
-#justo{
-    color: white; text-shadow: black 0.2em 0.2em 0.2em
-}
-
-/* de aqui empieza */
-#cantidadProducto{
-    text-align: left;
     margin-top: 40px;
-    margin-left: 20px;
-    color:rgb(113, 190, 235)
 }
-#contenedorCard{
-    justify-content: center;
+h2{
+    color:rgb(246, 221, 124);
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+}
+#btnProvincia{
     display:flex;
-    align-items: center;
-    text-align: center;
-    color: black;
-    padding: 20px;
-}
-#main{
     justify-content: center;
+    text-align: center;
+    
+    margin-bottom: 100px;
 }
 
-#tituloProvincia{
-    text-align:center;
+#tag{
     margin-top:10px;
-    justify-content: center;
+    margin-bottom:30px;
 }
-#h11{
-    font-size: 80px;
-    margin-top:20px;
-    color:rgb(127, 197, 255);
-    text-transform:uppercase;
-}
-#btn1{
-    margin-top:40px;
-    justify-content: center;
-    text-align: center;
+#txt{
+    margin-top:15px;
 }
