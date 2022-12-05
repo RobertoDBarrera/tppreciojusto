@@ -23,12 +23,13 @@ export class ProductListComponent implements OnInit  {
 
   productos: Producto[] = [];
   provinciaSlctd:string =this.route.snapshot.params['id'];
-  
+  public cantprod:any;
   
   
   constructor(private productoSrv:ProductoService,private route:ActivatedRoute) {
     productoSrv.getProductos(this.provinciaSlctd).subscribe((data:any) => {
     this.productos = data;
+    this.cantprod= this.productos.length;
     });
   } 
   
