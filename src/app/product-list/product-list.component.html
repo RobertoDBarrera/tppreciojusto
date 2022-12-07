@@ -7,11 +7,23 @@
     <div id="barCode" type="submit">
         <img src="../../assets/img/filter.png" width="40px" alt="">
     </div>
-    <div class="col col-lg-6">
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Busca un Producto">
+    <div class="col col-sm-6">
+        <input [(ngModel)]="filtroTexto"
+        (ngModelChange)="onFiltroTextoChange($event)" type="text" class="form-control" id="filtroTexto" placeholder="Busca un Producto">
     </div>
     <div id="lupa" type="submit">
         <img src="../../assets/img/buscar.png" width="35px" alt="">
+    </div>
+    <div id="slide" class="col-sm-4">
+        <input
+            [(ngModel)]="filtroPrecio"
+            (ngModelChange)="onFiltroPrecioChange($event)"
+            [max]="precioMaximo"
+            type="range"
+            class="form-range"
+            id="filtroPrecio"
+        >
+        <label for="filtroPrecio" class="form-label">Precio máximo - seleccionado: ${{filtroPrecio}}</label>
     </div>
 </div>
 <!-- aqui la provincia seleccionada-->
@@ -25,12 +37,12 @@
 
 <div class="row">
     <div id="cantidadProducto">
-        <h5>{{cantprod}}</h5>
+        <h5>{{productosFiltrados.length}}</h5>
     </div>
 </div>
 
 <!-- aqui las cards-->
-<div id="tabla" class="container" >
+<div id="tabla" class="container" *ngIf="productosFiltrados.length > 0; else noHayProductosBlock" >
     <table  class="table table-dark table-hover">
         <thead class="table-primary" >
           <tr>
@@ -39,7 +51,7 @@
             <th scope="col-3">Precio</th>
           </tr>
         </thead>
-        <tbody *ngFor="let producto of productos" id="manito">
+        <tbody *ngFor="let producto of productosFiltrados" id="manito">
             <tr>
                  <td class="col-2">{{producto.ean}}</td>
                  <td class="col-8">{{producto.nombre}}</td>
@@ -49,21 +61,8 @@
       </table>
 
 </div>
-
-
-
-
-
-
-<!--
-<div class="container">
-    <div class="row">
-        <div *ngFor="let producto of productos" class="card col-sm- nmb-2">
-                <div class="card-body">
-                    <h5 class="card-title">{{producto.nombre}} </h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{producto.ean}}</h6>
-                    <p class="card-text">{{producto.precio}}</p>
-                </div>
-        </div>
+<ng-template #noHayProductosBlock>
+    <div class="alert alert-warning" role="alert">
+        No hay productos para mostrar
     </div>
-</div>-->
+</ng-template>
